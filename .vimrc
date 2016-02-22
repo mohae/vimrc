@@ -1,4 +1,4 @@
-let mapleader = "\<Space>"
+let mapleader = ","
 set nomodeline
 set viminfo='1000,f1,:1000,/1000
 set history=1000
@@ -94,8 +94,8 @@ map <leader>q :e ~/buffer<cr>
 " open a MD scratchpad buffer
 map <leader>x :e ~/buffer.md<cr>
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Vundle manages Vundle: required
 Plugin 'gmarik/Vundle.vim'
