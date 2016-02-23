@@ -108,7 +108,6 @@ Plugin 'fatih/vim-go'
 Plugin 'elzr/vim-json'
 Plugin 'raimondi/delimitmate'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'fatih/vim-go'
 
 call vundle#end()
 
