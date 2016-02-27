@@ -1,3 +1,6 @@
+set nocompatible
+filetype off
+
 let mapleader = ","
 set nomodeline
 set viminfo='1000,f1,:1000,/1000
@@ -14,8 +17,10 @@ filetype indent on
 filetype plugin on
 scriptencoding utf-8
 set encoding=utf8
+
 " enable mouse automatically
 set mouse=a
+
 " auto-hide when typing
 set mousehide
 
@@ -103,6 +108,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'fatih/vim-go'
 Plugin 'elzr/vim-json'
@@ -110,6 +116,18 @@ Plugin 'raimondi/delimitmate'
 Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
+
+" status line. stolen from here:
+" https://github.com/lukaszkorecki/DotFiles/blob/master/vimrc
+set statusline=
+set statusline+=%f\ %2*%m\ %1*%h
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
+set statusline+=%*
+set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]
+set statusline+=%15.(%c:%l/%L%)\ %P
+set laststatus=2
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
